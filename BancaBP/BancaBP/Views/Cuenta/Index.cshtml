@@ -1,0 +1,56 @@
+﻿@model IEnumerable<BancaBP.Models.Cuenta>
+
+@{
+    ViewData["Title"] = "Index";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+<h1>Estado de Cuenta</h1>
+
+<table class="table">
+    <thead>
+        <tr>
+            <th>
+                @Html.DisplayNameFor(model => model.VchCuennumero)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.VchCuentipo)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.DecCuensaldo)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.DttCuenfechacreacion)
+            </th>
+            @*<th>
+                @Html.DisplayNameFor(model => model.IntCliecodigoNavigation)
+            </th>*@
+            <th></th>
+        </tr>
+    </thead>
+    <tbody>
+@foreach (var item in Model) {
+        <tr>
+            <td>
+                @Html.DisplayFor(modelItem => item.VchCuennumero)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.VchCuentipo)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.DecCuensaldo)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.DttCuenfechacreacion)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.IntCliecodigoNavigation.IntCliecodigo)
+            </td>
+            <td>
+                <a asp-action="Edit" asp-route-id="@item.IntCuencodigo">Edit</a> |
+                <a asp-action="Delete" asp-route-id="@item.IntCuencodigo">Delete</a>
+            </td>
+        </tr>
+}
+    </tbody>
+</table>

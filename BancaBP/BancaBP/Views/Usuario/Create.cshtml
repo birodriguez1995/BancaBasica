@@ -1,0 +1,114 @@
+﻿@model BancaBP.Models.Usuario
+
+@{
+    ViewData["Title"] = "Create";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+<h1>Regístrese</h1>
+
+<hr />
+<div class="row">
+    <div class="col-md-12">
+        <form asp-action="Create">
+            <div asp-validation-summary="ModelOnly" class="text-danger"></div>
+            <div class="row">
+                <div class="col-md-6">
+                    <div class="form-group">
+                        <label asp-for="IntUsucodigo" class="control-label"></label>
+                        <input asp-for="IntUsucodigo" class="form-control" />
+                        <span asp-validation-for="IntUsucodigo" class="text-danger"></span>
+                    </div>
+                </div>
+                <div class="col-md-6">
+                    <div class="form-group">
+                        <label asp-for="VchUsunombre" class="control-label"></label>
+                        <input asp-for="VchUsunombre" class="form-control" />
+                        <span asp-validation-for="VchUsunombre" class="text-danger"></span>
+                    </div>
+                </div>
+            </div>
+            <div class="row">
+                <div class="col-md-6">
+                    <div class="form-group">
+                        <label asp-for="VchUsuapellido" class="control-label"></label>
+                        <input asp-for="VchUsuapellido" class="form-control" />
+                        <span asp-validation-for="VchUsuapellido" class="text-danger"></span>
+                    </div>
+                </div>
+                <div class="col-md-6">
+                    <div class="form-group">
+                        <label asp-for="VchUsucedula" class="control-label"></label>
+                        <input asp-for="VchUsucedula" class="form-control" />
+                        <span asp-validation-for="VchUsucedula" class="text-danger"></span>
+                    </div>
+                </div>
+            </div>
+            <div class="row">
+                <div class="col-md-6">
+                    <div class="form-group">
+                        <label asp-for="VchUsudireccion" class="control-label"></label>
+                        <input asp-for="VchUsudireccion" class="form-control" />
+                        <span asp-validation-for="VchUsudireccion" class="text-danger"></span>
+                    </div>
+                </div>
+                <div class="col-md-6">
+                    <div class="form-group">
+                        <div class="form-group">
+                            <label asp-for="VchUsutelefono" class="control-label"></label>
+                            <input asp-for="VchUsutelefono" class="form-control" />
+                            <span asp-validation-for="VchUsutelefono" class="text-danger"></span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="row">
+                <div class="col-md-6">
+                    <div class="form-group">
+                        <label asp-for="VchUsuemail" class="control-label"></label>
+                        <input asp-for="VchUsuemail" class="form-control" />
+                        <span asp-validation-for="VchUsuemail" class="text-danger"></span>
+                    </div>
+                </div>
+                <div class="col-md-6">
+                    <div class="form-group">
+                        <div class="form-group">
+                            <label asp-for="VchUsuusuario" class="control-label"></label>
+                            <input asp-for="VchUsuusuario" class="form-control" />
+                            <span asp-validation-for="VchUsuusuario" class="text-danger"></span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="row">
+                <div class="col-md-6">
+                    <div class="form-group">
+                        <label asp-for="VchUsupassword" class="control-label"></label>
+                        <input asp-for="VchUsupassword" class="form-control" />
+                        <span asp-validation-for="VchUsupassword" class="text-danger"></span>
+                    </div>
+                </div>
+                <div class="col-md-6">
+                    <div class="form-group">
+                        <div class="form-group">
+                            <label asp-for="VchRol" class="control-label"></label>
+                            <input asp-for="VchRol" class="form-control" />
+                            <span asp-validation-for="VchRol" class="text-danger"></span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="form-group">
+                <input type="submit" value="Create" class="btn btn-primary" />
+            </div>
+        </form>
+    </div>
+</div>
+
+@*<div>
+    <a asp-action="Index">Back to List</a>
+</div>*@
+
+@section Scripts {
+    @{await Html.RenderPartialAsync("_ValidationScriptsPartial");}
+}

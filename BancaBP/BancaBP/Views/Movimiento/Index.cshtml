@@ -1,0 +1,68 @@
+﻿@model IEnumerable<BancaBP.Models.Movimiento>
+
+@{
+    ViewData["Title"] = "Index";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+<h1>Reporte Movimientos</h1>
+
+<table class="table">
+    <thead>
+        <tr>
+            <th>
+                @Html.DisplayNameFor(model => model.DttMovifecha)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.VchMovitipo)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.DecMovivalor)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.DecMovisaldofinal)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.VchMovicuentorig)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.VchMovicuentdest)
+            </th>
+            @*<th>
+                @Html.DisplayNameFor(model => model.IntCuencodigoNavigation)
+            </th>*@
+            <th></th>
+        </tr>
+    </thead>
+    <tbody>
+@foreach (var item in Model) {
+        <tr>
+            <td>
+                @Html.DisplayFor(modelItem => item.DttMovifecha)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.VchMovitipo)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.DecMovivalor)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.DecMovisaldofinal)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.VchMovicuentorig)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.VchMovicuentdest)
+            </td>
+            @*<td>
+                @Html.DisplayFor(modelItem => item.IntCuencodigoNavigation.IntCuencodigo)
+            </td>*@
+            <td>
+                <a asp-action="Edit" asp-route-id="@item.IntMovicodigo">Edit</a> |
+                <a asp-action="Delete" asp-route-id="@item.IntMovicodigo">Delete</a>
+            </td>
+        </tr>
+}
+    </tbody>
+</table>

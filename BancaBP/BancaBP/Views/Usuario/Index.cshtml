@@ -1,0 +1,86 @@
+﻿@model IEnumerable<BancaBP.Models.Usuario>
+
+@{
+    ViewData["Title"] = "Index";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+<h1>Usuarios</h1>
+
+<table class="table">
+    <thead>
+        <tr>
+            <th>
+                @Html.DisplayNameFor(model => model.IntUsucodigo)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.VchUsunombre)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.VchUsuapellido)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.VchUsucedula)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.VchUsudireccion)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.VchUsutelefono)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.VchUsuemail)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.VchUsuusuario)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.VchUsupassword)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.VchRol)
+            </th>
+            <th></th>
+        </tr>
+    </thead>
+    <tbody>
+@foreach (var item in Model) {
+        <tr>
+            <td>
+                @Html.DisplayFor(modelItem => item.IntUsucodigo)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.VchUsunombre)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.VchUsuapellido)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.VchUsucedula)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.VchUsudireccion)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.VchUsutelefono)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.VchUsuemail)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.VchUsuusuario)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.VchUsupassword)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.VchRol)
+            </td>
+            <td>
+                @Html.ActionLink("Edit", "Edit", new { id=item.IntUsucodigo }) |
+                @Html.ActionLink("Delete", "Delete", new { id = item.IntUsucodigo })
+            </td>
+        </tr>
+}
+    </tbody>
+</table>

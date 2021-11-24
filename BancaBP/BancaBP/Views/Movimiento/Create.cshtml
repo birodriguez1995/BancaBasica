@@ -1,0 +1,61 @@
+﻿@model BancaBP.Models.Movimiento
+
+@{
+    ViewData["Title"] = "Create";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+<h4>Crear Movimiento</h4>
+<hr />
+<div class="row">
+    <div class="col-md-4">
+        <form asp-action="Create">
+            <div asp-validation-summary="ModelOnly" class="text-danger"></div>
+            <div class="form-group">
+                <label asp-for="IntCuencodigo" class="control-label"></label>
+                <select asp-for="IntCuencodigo" class ="form-control" asp-items="ViewBag.IntCuencodigo"></select>
+            </div>
+            <div class="form-group">
+                <label asp-for="DttMovifecha" class="control-label"></label>
+                <input asp-for="DttMovifecha" class="form-control" />
+                <span asp-validation-for="DttMovifecha" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="VchMovitipo" class="control-label"></label>
+                <input asp-for="VchMovitipo" class="form-control" />
+                <span asp-validation-for="VchMovitipo" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="DecMovivalor" class="control-label"></label>
+                <input asp-for="DecMovivalor" class="form-control" />
+                <span asp-validation-for="DecMovivalor" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="DecMovisaldofinal" class="control-label"></label>
+                <input asp-for="DecMovisaldofinal" class="form-control" />
+                <span asp-validation-for="DecMovisaldofinal" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="VchMovicuentorig" class="control-label"></label>
+                <input asp-for="VchMovicuentorig" class="form-control" />
+                <span asp-validation-for="VchMovicuentorig" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="VchMovicuentdest" class="control-label"></label>
+                <input asp-for="VchMovicuentdest" class="form-control" />
+                <span asp-validation-for="VchMovicuentdest" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <input type="submit" value="Create" class="btn btn-primary" />
+            </div>
+        </form>
+    </div>
+</div>
+
+@*<div>
+    <a asp-action="Index">Back to List</a>
+</div>*@
+
+@section Scripts {
+    @{await Html.RenderPartialAsync("_ValidationScriptsPartial");}
+}

@@ -1,0 +1,58 @@
+﻿@model BancaBP.Models.Cliente
+
+@{
+    ViewData["Title"] = "Create";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+<h1>Crear Cliente</h1>
+
+<hr />
+<div class="row">
+    <div class="col-md-4">
+        <form asp-action="Create">
+            <div asp-validation-summary="ModelOnly" class="text-danger"></div>
+            <div class="form-group">
+                <label asp-for="VchClienombre" class="control-label"></label>
+                <input asp-for="VchClienombre" class="form-control" />
+                <span asp-validation-for="VchClienombre" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="VchClieapellido" class="control-label"></label>
+                <input asp-for="VchClieapellido" class="form-control" />
+                <span asp-validation-for="VchClieapellido" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="VchCliecedula" class="control-label"></label>
+                <input asp-for="VchCliecedula" class="form-control" />
+                <span asp-validation-for="VchCliecedula" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="VchCliedireccion" class="control-label"></label>
+                <input asp-for="VchCliedireccion" class="form-control" />
+                <span asp-validation-for="VchCliedireccion" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="VchClietelefono" class="control-label"></label>
+                <input asp-for="VchClietelefono" class="form-control" />
+                <span asp-validation-for="VchClietelefono" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="VchClieemail" class="control-label"></label>
+                <input asp-for="VchClieemail" class="form-control" />
+                <span asp-validation-for="VchClieemail" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <input type="submit" value="Create" class="btn btn-primary" />
+            </div>
+        </form>
+    </div>
+</div>
+
+@*<div>
+    <a asp-action="Index">Back to List</a>
+</div>*@
+
+@section Scripts {
+    @{await Html.RenderPartialAsync("_ValidationScriptsPartial");}
+}
